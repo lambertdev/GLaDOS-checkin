@@ -33,14 +33,16 @@ const glados = async () => {
 const notify = async (contents) => {
   const token = process.env.NOTIFY
   if (!token || !contents) return
-  await fetch(`https://www.pushplus.plus/send`, {
+  //await fetch(`https://www.pushplus.plus/send`, {
+  await fetch(`https://sctapi.ftqq.com/SCT220061Tq2WMzBNOkSHlPsQTpJkSzIOU.send`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({
-      token,
+    //  token,
       title: contents[0],
-      content: contents.join('<br>'),
-      template: 'markdown',
+      desp: contents.join('<br>')
+    //  content: contents.join('<br>'),
+    //  template: 'markdown',
     }),
   })
 }
