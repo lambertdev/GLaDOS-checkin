@@ -40,7 +40,7 @@ const notify = async (contents) => {
     body: JSON.stringify({
     //  token,
       title: contents[0],
-      desp: contents.join('<br>')
+      desp: contents.join('\n\n')
     //  content: contents.join('<br>'),
     //  template: 'markdown',
     }),
