@@ -15,7 +15,7 @@ const glados = async () => {
       headers: { ...headers, 'content-type': 'application/json;charset=UTF-8', 'Content-Length': '22' },
       body: '{"token":"glados.one"}',
     }).then((r) => r.json())
-    const status = await fetch('https://glados.rocks/api/user/status', {
+    const status = await fetch('https://www.glados.rocks/api/user/status', {
       method: 'GET',
       headers,
     }).then((r) => r.json())
