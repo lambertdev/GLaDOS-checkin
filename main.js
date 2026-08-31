@@ -11,7 +11,7 @@ const glados = async () => {
       'Accept': 'application/json, text/plain, */*'
     }
     const checkin = await fetch('https://glados.rocks/console/checkin', {
-      method: 'GET',
+      method: 'POST',
       headers: { ...headers, 'content-type': 'application/json;charset=UTF-8', 'Content-Length': '22' },
       body: '{"token":"glados.rocks"}',
     }).then((r) => r.json())
