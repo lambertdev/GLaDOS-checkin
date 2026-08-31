@@ -51,7 +51,18 @@ const notify = async (contents) => {
 }
 
 const main = async () => {
-  await notify(await glados())
+  const result = await glados()
+  
+  // 将结果输出到 GitHub Actions 的日志中
+  if (result && result.length > 0) {
+    console.log('========== GLaDOS Checkin Result ==========')
+    console.log(result.join('\n'))
+    console.log('===========================================')
+  } else {
+    console.log('执行完毕，但没有产生结果。请检查环境变量设置。')
+  }
+  
+  await notify(result)
 }
 
 main()
