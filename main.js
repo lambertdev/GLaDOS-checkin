@@ -10,8 +10,8 @@ const glados = async () => {
       'Accept-Encoding': 'gzip, deflate, br, zstd',
       'Accept': 'application/json, text/plain, */*'
     }
-    const checkin = await fetch('https://www.glados.rocks/api/user/checkin', {
-      method: 'POST',
+    const checkin = await fetch('https://glados.rocks/console/checkin', {
+      method: 'GET',
       headers: { ...headers, 'content-type': 'application/json;charset=UTF-8', 'Content-Length': '22' },
       body: '{"token":"glados.one"}',
     }).then((r) => r.json())
