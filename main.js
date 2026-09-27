@@ -23,7 +23,7 @@ const glados = async () => {
       body: '{"token":"glados.rocks"}',
     }).then((r) => r.json())
     
-    const status = await fetch('https://glados.rocks/api/user/status', {
+    const status = await fetch('https://www.glados.rocks/api/user/status', {
       method: 'GET',
       headers,
     }).then((r) => r.json())
