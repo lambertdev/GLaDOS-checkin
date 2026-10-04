@@ -7,20 +7,26 @@ const glados = async () => {
   try {
     const headers = {
       'cookie': cookie,
-      'origin': 'https://glados.rocks',
-      'referer': 'https://glados.rocks/console/checkin',
-      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36',
+      'origin': 'https://www.glados.rocks',
+      'referer': 'https://www.glados.rocks/console/checkin',
+  'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36',
+  'sec-ch-ua': '"Chromium";v="152", "Not?A_Brand";v="24", "Google Chrome";v="152"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-ch-ua-platform': '"Windows"',
+  'sec-fetch-dest': 'empty',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-site': 'same-origin',
       'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
-      'Accept-Encoding': 'gzip, deflate, br, zstd',
+      'Accept-Encoding': 'gzip, deflate, br',
       'Accept': 'application/json, text/plain, */*'
     }
     
     // 修改 1：修正 URL 为实际抓包的 API 地址
-    const checkin = await fetch('https://glados.rocks/api/user/checkin', {
+    const checkin = await fetch('https://www.glados.rocks/api/user/checkin', {
       method: 'POST',
       // 修改 2：移除手动硬编码的 Content-Length，Node.js fetch 会自动计算正确的长度 (24)
       headers: { ...headers, 'content-type': 'application/json;charset=UTF-8' },
-      body: '{"token":"glados.rocks"}',
+      body: '{"token":"www.glados.rocks"}',
     }).then((r) => r.json())
     
     const status = await fetch('https://www.glados.rocks/api/user/status', {
